@@ -7,5 +7,5 @@ const chatappScheme = new mongoose.Schema ({
     recieved: Boolean
 })
  
-const ChatMessage = mongoose.model('ChatMessage', chatappScheme)
+const ChatMessage = mongoose.model('chatmessages', chatappScheme)
 module.exports = ChatMessage
