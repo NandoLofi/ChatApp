@@ -50,6 +50,7 @@
 .chat__reciever {
     margin-left: auto;
     font-size: xx-small;
+    top: -15px;
 }
 .chat__footer {
     display: flex;

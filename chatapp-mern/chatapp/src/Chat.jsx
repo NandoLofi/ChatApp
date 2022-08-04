@@ -1,10 +1,11 @@
-import React from 'react'
+import {React, useState} from 'react'
 import './Chat.css'
 import { Avatar, IconButton } from "@mui/material"
 import { SearchOutlined, MoreVert, AttachFile, InsertEmoticon } from '@mui/icons-material';
 import MicIcon from '@mui/icons-material/Mic';
 
 export default function Chat({ messages }) {
+  const [input, setInput] = useState("")
   return (
     <div className='chat'>
       <div className="chat__header">
@@ -28,7 +29,7 @@ export default function Chat({ messages }) {
       </div> 
       <div className="chat__body">
         {messages.map((message)=> (
-           <p className={`chat__message ${message.revieved && "chat__reciever"}`}>
+           <p className={`chat__message ${message.recieved && "chat_reciever"}`}>
            <span className="chat__name">{message.name}</span>
              {message.message}
            <span className="chat__timestamp"> {message.timestamp}</span>
