@@ -4,9 +4,11 @@ const mongoose = require('mongoose')
 const app = express()
 const PORT = process.env.PORT || 3001
 require('dotenv').config()
+const cors = require('cors')
 
 //middleware
 app.use(express.json())
+app.use(cors())
 
 //pusher real-time
 const Pusher = require('pusher')
@@ -36,7 +38,7 @@ db.once('open', ()=> {
             const messageDetails = change.fullDocument;
             pusher.trigger('messages', 'inserted',
                 {
-                    name: messageDetails.user,
+                    name: messageDetails.name,
                     message: messageDetails.message
                 }
             );
