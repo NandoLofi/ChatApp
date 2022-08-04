@@ -40,6 +40,7 @@ db.once('open', ()=> {
                 {
                     name: messageDetails.name,
                     message: messageDetails.message
+                    
                 }
             );
         } else {
